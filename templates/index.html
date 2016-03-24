@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+<html>
+    <head>
+    </head>
+
+    <body>
+        {% block content %}
+            <div id="content">
+                <h2>Power Metering Web Services</h2>
+                <ul>
+                    <li><a href="/get_power_meter">Get power meter list</a></li>
+                    <li><a href="/get_energy_consumption_today?power_meter_id=0&interval=15">Energy consumption today</a></li>
+                    <li><a href="/get_energy_consumption_history?power_meter_id=0&datarange=d&date=05%2F16%2F2015&intervaltype=m&interval=30">Energy consumption history (day)</a></li>
+                    <li><a href="/get_energy_consumption_history?power_meter_id=0&datarange=m&date=05%2F16%2F2015&intervaltype=m&interval=1">Energy consumption history (month)</a></li>
+                    <li><a href="/get_energy_consumption_history_export?power_meter_id=0&datarange=d&date=05%2F16%2F2015&intervaltype=m&interval=30">Energy consumption history export (day)</a></li>
+                    <li><a href="/get_energy_consumption_history_export?power_meter_id=0&datarange=m&date=05%2F16%2F2015&intervaltype=m&interval=1">Energy consumption history export (month)</a></li>
+                    <li><a href="/get_energy_consumption_history_comparison?power_meter_id=0&date_1=05%2F16%2F2015&date_2=05%2F17%2F2015&datarange=d&interval=60">Energy consumption history comparison (day)</a></li>
+                    <li><a href="/get_energy_consumption_history_comparison?power_meter_id=0&date_1=05%2F16%2F2015&date_2=06%2F17%2F2015&datarange=m&interval=1">Energy consumption history comparison (month)</a></li>
+                </ul>
+
+                <h2>WebAccess Functions</h2>
+                <ul>
+                    <li><a href="{{wa_ws_url}}/json/Logon">Login</a></li>
+                    <li><a href="{{wa_ws_url}}/json/ProjectList">Project List</a></li>
+                    <li><a href="{{wa_ws_url}}/json/ProjectDetail/85">Project Detail</a></li>
+                    <li><a href="{{wa_ws_url}}/json/NodeList/85">Node List</a></li>
+                    <li><a href="{{wa_ws_url}}/json/NodeDetail/85/energy">Node Detail</a></li>
+                    <li><a href="{{wa_ws_url}}/json/PortList/85/energy">Port List</a></li>
+                    <li><a href="{{wa_ws_url}}/json/PortDetail/85/energy/1">Port Detail</a></li>
+                    <li><a href="{{wa_ws_url}}/json/DeviceList/85/energy/1">Device List</a></li>
+                    <li><a href="{{wa_ws_url}}/json/DeviceDetail/85/energy/1/ACR">Device Detail</a></li>
+                    <li><a href="{{wa_ws_url}}/json/TagList/85">Tag List</a></li>
+                    <li><a href="{{wa_ws_url}}/json/TagDetail/85">Tag Detail</a></li>
+                    <li><a href="{{wa_ws_url}}/json/GetTagValue/85">Tag Value</a></li>
+                    <li><a href="{{wa_ws_url}}/json/GetDataLog/85">Data Log</a></li>
+                </ul>
+
+                <h2>SUSI Access Functions</h2>
+                <ul>
+                    <li><a href="/susi_login">Login</a></li>
+                    <li><a href="/susi_create_tables">Create tables</a></li>
+                </ul>
+            </div>
+        {% end %}
+    </body>
+</html>

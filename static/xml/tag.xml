@@ -1,0 +1,8 @@
+<request>
+<tableName value="tag"/>
+<fields>
+	<item fieldName="name" fieldType="character" length="256" allowNULL="false"/>
+	<item fieldName="description" fieldType="character" length="256" allowNULL="true"/>
+	<item fieldName="type" fieldType="character" length="10" allowNULL="true"/><!-- analogue, discrete, text -->
+</fields>
+</request>

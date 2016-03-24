@@ -1,0 +1,7 @@
+<request>
+<tableName value="devicetag"/>
+<fields>
+	<item fieldName="device_id" fieldType="bigint" allowNULL="false"/>
+	<item fieldName="tag_id" fieldType="bigint" allowNULL="false"/>
+</fields>
+</request>

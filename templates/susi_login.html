@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+<html>
+    <head>
+    </head>
+    <body>
+        {% block content %}
+            <div id="content">
+                <h2>SUSIAccess Server - Login</h2>
+                <form action="/susi/AccountMgmt/Login" method="POST" target="_self" accept-charset="UTF-8">
+                    <fieldset>
+                    <legend>Login data:</legend>
+                    <textarea rows="20" cols="100" name="data" readonly>
+                        <request>
+                            <item name="username" value="admin"/>
+                            <item name="password" value="admin"/>
+                        </request>
+                    </textarea>
+                    <br><br>
+                    <input type="submit" value="Submit">
+                    </fieldset>
+                    {% raw xsrf_form_html() %}
+                </form>
+            </div>
+        {% end %}
+    </body>
+</html>

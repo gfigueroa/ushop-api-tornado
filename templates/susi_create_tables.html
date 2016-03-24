@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+<html>
+    <head>
+    </head>
+    <body>
+        {% block content %}
+            <div id="content">
+                <h2>SUSIAccess Server - Create Tables</h2>
+                <form action="/susi/SQLMgmt/CreateTables" method="POST" target="_self" accept-charset="UTF-8">
+                    <fieldset>
+                    <legend>Create table XML data:</legend>
+                    <textarea rows="12" cols="80" name="data" readonly>
+                        <request>
+                            <tableName value="wa_sensordata"/>
+                            <fields>
+                                <item fieldName="device_id" fieldType="bigint" allowNULL="false"/>
+                                <item fieldName="tag_id" fieldType="bigint" allowNULL="false"/>
+                                <item fieldName="datetime" fieldType="timestamp" allowNULL="false"/>
+                                <item fieldName="analogue_value" fieldType="double" allowNULL="true"/>
+                                <item fieldName="text_value" fieldType="character" length="256" allowNULL="true"/>
+                            </fields>
+                        </request>
+                    </textarea>
+                    <br/>
+                    <textarea rows="12" cols="80" name="data" readonly>
+                        <request>
+                            <tableName value="wa_tag"/>
+                            <fields>
+                                <item fieldName="name" fieldType="character" length="256" allowNULL="false"/>
+                                <item fieldName="description" fieldType="character" length="256" allowNULL="true"/>
+                                <item fieldName="type" fieldType="character" length="10" allowNULL="true"/>
+                            </fields>
+                        </request>
+                    </textarea>
+                    <br/>
+                    <textarea rows="12" cols="80" name="data" readonly>
+                        <request>
+                            <tableName value="wa_devicetag"/>
+                            <fields>
+                                <item fieldName="device_id" fieldType="bigint" allowNULL="false"/>
+                                <item fieldName="tag_id" fieldType="bigint" allowNULL="false"/>
+                            </fields>
+                        </request>
+                    </textarea>
+                    <br>
+                    <input type="submit" value="Submit">
+                    </fieldset>
+                    {% raw xsrf_form_html() %}
+                </form>
+            </div>
+        {% end %}
+    </body>
+</html>

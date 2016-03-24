@@ -1,0 +1,10 @@
+<request>
+<tableName value="sensordata"/>
+<fields>
+	<item fieldName="device_id" fieldType="bigint" allowNULL="false"/>
+	<item fieldName="tag_id" fieldType="bigint" allowNULL="false"/>
+	<item fieldName="datetime" fieldType="timestamp" allowNULL="false"/>
+	<item fieldName="analogue_value" fieldType="double" allowNULL="true"/>
+	<item fieldName="text_value" fieldType="character" length="256" allowNULL="true"/>
+</fields>
+</request>
